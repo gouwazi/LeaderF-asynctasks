@@ -32,3 +32,10 @@ function! lf_asynctasks#preview(orig_buf_nr, orig_cursor, line, args) abort
 	let file = get(parts, 3, '')
 	return [file, 1, '']
 endfunction
+
+function! lf_asynctasks#digest(line, mode)
+	let parts = split(a:line, s:sep, 1)
+	let name = get(parts, 0, '')
+	return [name, 0]
+endfunc
+
